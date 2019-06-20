@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Color Machine</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>The Color Machine</h1>
+    <div class="tableInput">
+      <form>
+        <table id="grid" style="display: none"></table>
+        <br />
+        <!-- <br> -->
+        <input id="color-picker" type="color" />
+        <div class="controls">
+          <input
+            onclick="resetGrid()"
+            type="button"
+            value="Reset Pattern"
+          />
+          <!-- <br><br><br> -->
+          <input
+            onclick="myVar = button_animation('a',100)"
+            type="button"
+            value="Animate"
+          />
+            
+          <!-- <input onclick="speed('slower')" type="button" value="slower" />
+
+          <input onclick="speed('faster')" type="button" value="faster" /> -->
+          <input
+            onclick="myRandom = button_randomize()"
+            type="button"
+            value="Randomize"
+          />
+                    
+            <input
+            id="coordinate-button"
+            onclick="myRandom = inputDrawingCoord()"
+            type="button"
+            value="Use Coord Input"
+          />
+
+          <input
+            onclick="myVar = play()"
+            type="button"
+            value="Play/Pause"
+          />
+
+          <input
+            onclick="toggleDebug()"
+            type="button"
+            value="Debug Mode {Off}"
+            id="debug"
+          />
+
+          <select id="mySelect" onchange="button_animation(document.getElementById('mySelect').value,100)">
+            <option > Shapes
+            <option value="Star">Star
+            <option value="Circle">Circle
+            <option value="Smile">Smile
+            <option value="Square">Square
+          </select>
+
+
+
+        </div>
+        <div align="center">
+          <div id="slider-controls">
+            <span id="cycle-label">Cycle</span>
+            <span id="speed-label">Speed</span>
+          </div>
+    <span id="repeat"></span>
+  <input type="range" min="0" max="25" value="1" class="slider" id="repeat_number">
+   <span id="speed"></span>
+  <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
+  </div>
+  <div>
+      
+  </div>
+        </div>
+        <p id="output-label">Coordinate Output</p>
+         <textarea  rows="40" cols="20" id="out_Area" placeholder="Coordinate output"></textarea>
+          <p id="input-label">Coordinate Input</p>
+          <textarea rows="40" cols="20" id="input_Area" placeholder="Coordinate input"></textarea>
+
+<script >
+var slider1 = document.getElementById("myRange");
+var output1 = document.getElementById("speed");
+output1.innerHTML = slider1.value; 
+
+slider1.oninput = function() {
+    output1.innerHTML = this.value;
+    speed(this.value);
+  }
+
+var slider2 = document.getElementById("repeat_number");
+var output2 = document.getElementById("repeat");
+output2.innerHTML = slider2.value; 
+
+slider2.oninput = function() {
+    output2.innerHTML = "<br>"+this.value;
+    if(this.value==0){
+    output2.innerHTML = "<br>Loop";
+    }
+    set_repeat(this.value);
+    }
+
+    //outputs text area of drawing made when button pressed
+function outputDrawingCoord(){
+  
+document.getElementById("out_Area").value = output();
+}
+//put text from output to input to create previous drawing on screen
+function inputDrawingCoord(){
+  
+input(document.getElementById("input_Area").value);
+button_animation('a',500);
+}
+</script>
+        
+      </form>
+    </div>
+
+    <br />
+    <script src="shapes.js"></script>
+    <script src="drawing.js"></script>
+
+  </body>
+</html>

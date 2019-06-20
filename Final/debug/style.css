@@ -1,0 +1,67 @@
+body {
+	overflow: scroll;
+	height: 100%;
+	font-family: Helvetica, serif;
+	background-color: rgb(231, 231, 231);
+}
+
+#cells {
+    float: right;
+    clear: both;
+    margin-top: 50px;
+    margin-right: 100px;
+    border-spacing: 0;
+}
+
+#cells td {
+    width: 5px;
+    height: 5px;
+}
+
+#cells tr {
+    width: 5px;
+    height: 5px;
+}
+input:hover {
+    background-color: lightgrey;
+}
+.creation {
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 0 3px 10px 3px;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+}
+
+#colors {
+    position: fixed;
+    top: 0;
+    left: 5%;
+}
+
+button {
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+    margin-top: 15px;;
+    background-color: rgb(113, 214, 228);
+    color: #fff;
+}
+#other {
+    border-radius: 5px;
+    font-size: 8px;
+    width: 50px;
+    height: 40px;
+    margin-top: 15px;
+    background-color: rgb(113, 214, 228);
+    color: #fff;
+}
+
+input {
+    margin: 5px 0;
+}
+
+
+

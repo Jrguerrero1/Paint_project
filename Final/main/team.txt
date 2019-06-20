@@ -1,0 +1,3 @@
+Malcolm Carr - Main JS development, Setup, CSS
+Jae Young Jun - API, Discovery Report
+Joaquin Guerrero - Video, HTML, Debugging

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>Paint Project</title>
+</head>
+<body onbeforeunload="return reload() " ">
+
+	<div class="page">
+		<table  id="colors" style="color: white">
+			<tr id="color-list"></tr>
+		</table>
+		<table id="cells" border="0">
+		</table>
+		<br>
+
+		<div class="creation">
+			<p id="message">Enter your picture size!</p>
+			<label for="row">Rows 
+				<input type="number" name="row" id="row">
+			</label>
+			<br>
+			<label for="col">Columns 
+					<input type="number" name="col" id="col">
+			</label>
+			<br>
+
+		<button onclick="create()">Create</button>
+		<a onclick="reset()"><button >Reset</button></a>
+		<br>
+		<a onclick="modePage()" ><button id="other">Debug</button></a>
+		</div>
+	</div>
+	
+	<script src="script.js"></script>
+</body>
+</html>

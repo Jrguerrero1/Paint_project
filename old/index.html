@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project (part 1)</title>
+</head>
+<h1 style="color:white;">
+<style>
+
+.page {
+
+    max-width: 300px;
+    margin: auto;
+}
+	
+</style>
+<body bgcolor="black">
+	<style>
+	table#table {
+		/*width: 50%; */
+		background-color: white;
+		color: white;
+		outline-color: white;
+		/*border:0px;*/
+		border-collapse: collapse;
+	/*	width:400px;
+		height: 400px;*/
+
+	}	
+</style>
+
+<div class="page">
+
+<br>
+<table id="table">
+
+</table>
+<script>
+	function create() {
+
+		var table = document.getElementById("table");
+		document.getElementById("table").style.width = '400px';
+		document.getElementById("table").style.height = '400px';
+
+		var row=null;
+		// var row = table.insertRow(0);
+		// var cell1 = row.insertCell(0);
+		// var cell2 = row.insertCell(1);
+		// cell1.innerHTML = "x";
+		// cell2.innerHTML = "x";
+		var x = document.getElementById('row').value;
+		var y = document.getElementById('col').value;
+		for (i=1; i <= x; i++) {
+			row = table.insertRow();
+
+			for (j=1; j <= y; j++){
+				row.insertCell().textContent = ""  ;  
+			} 
+		}
+	}
+	function changeColor(){
+		var colorx = document.getElementById('rowX').value;
+		var colory = document.getElementById('colY').value;
+		var value = document.getElementById('value').value;
+		var x = document.getElementById("table").rows[colorx].cells;
+
+    x[colory].style.background = value;
+    x[colory].style.color = value;
+  // var x = document.getElementById("test").rows[rowx].cells;
+  //   x[coly].style.background = value;
+	}
+	function reload() {
+    location.reload();
+}
+</script>
+row: <input type="number" name="row" id="row"><br>
+col: <input type="number" name="col" id="col"><br>
+color: <input type="text" name="color" id="value"><br>
+row2: <input type="number" name="rowX" id="rowX"><br>
+col2: <input type="number" name="colY" id="colY"><br>
+
+<button onclick="create() ; style.display = 'none'">create</button>
+<button onclick= "changeColor()"> Change color</button>
+<button onclick= "reload()"> reset</button>
+
+
+
+</div>
+</h1>
+</body>
+</html>
